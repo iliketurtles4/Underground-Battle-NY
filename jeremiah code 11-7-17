@@ -1,0 +1,168 @@
+'''
+@author: The Harbingers
+Description: Battle for New York in the subway systems beneath the city as
+ hideous creatures come out of the dark and try to kill you!
+ Stemming from years of hazardous, toxic waste in the sewers, fight for
+ you own survival along with humanity's as unrelenting waves of slime, thrall,
+ and other abominations try to stop you from saving the world. As you fight
+ through the underground, the streets, and eventually the sky, go up against
+ stronger and tougher enemies, mutated foes, and all sorts of other terrifying
+ things from the deep.
+'''
+
+import pygame
+import sys, os, math
+from pygame import *
+from random import randint
+from spriteHelper import SpriteSheet 
+
+WINDOWWIDTH = 1024
+WINDOWHEIGHT = 768
+GAMENAME = "Underground Battle NY"
+FRAMERATE = 60
+BGCOLOR = (255,255,255)
+#
+
+class player:
+    x = 0
+    y = 0
+    
+    collider = None
+    
+    ###CONSTRUCTOR###
+    def __init__(self):
+        self.image = SpriteSheet("FREETILES.png")
+        self.image = self.image.get_image(0,0,560,700)
+    
+    def draw(self,surface):
+        '''draws the sprite for the player on the screen'''
+        surface.blit(self.image,(self.x,self.y))
+        
+    
+    def getcollider(self):
+        rect = self.image.get_rect()
+        pass
+    def getCenter(self):
+        rect = self.image.get_rect()
+        print(rect.w/2,rect.h/2)
+        
+
+class Game:
+    ########## VARIABLES ##########
+    score = 0
+    levels = [       ]
+    topScores = []
+    player= None
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pygame.init()
+        self.clock = pygame.time.Clock()
+        self.surface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT))
+        pygame.display.set_caption(GAMENAME)
+        self.player = player()
+        
+       
+    ########## MAIN FUNCTION ##########
+    def main(self):
+        playing = True
+        
+        ########## GAME LOOP ##########
+        while playing:
+            delta = self.clock.tick(FRAMERATE)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    self.quit()
+            self.processLogic(delta)
+            self.drawScreen()
+            pygame.display.flip()
+                    
+    def quit(self):
+        pygame.quit()
+        sys.exit()
+            
+    def processLogic(self,delta):
+        pass
+            
+    def drawScreen(self):
+        self.surface.fill(BGCOLOR)
+        centerOfScreen = self.getCenterOfScreen()
+        centerOfPlayer = self.player.getCenter()
+        self.player.draw(self.surface)
+        
+    def getCenterOfScreen(self):
+        return (WINDOWWIDTH/2,WINDOWHEIGHT/2)
+    
+                      
+        pygame.display.update()
+        #Constantly updates the screen with new information
+        self.clock.tick(FRAMERATE)
+            #Sets the frame rate for the game which updates the screen
+       
+if __name__=='__main__':
+    game = Game()
+    game.main()
+   
+class Levels:
+    ########## VARIABLES ##########
+   
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+       
+class Platforms:
+    ########## VARIABLES ##########
+   
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+   
+class Interface:
+    ########## VARIABLES ##########
+   
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+   
+class Buttons:
+    ########## VARIABLES ##########
+   
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+   
+class Characters:
+    ########## VARIABLES ##########
+    dead = False
+   
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+   
+class Collectables:
+    ########## VARIABLES ##########
+   
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+   
+class Hazards:
+    ########## VARIABLES ##########
+   
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+   
+class Destructables:
+    ########## VARIABLES ##########
+   
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
