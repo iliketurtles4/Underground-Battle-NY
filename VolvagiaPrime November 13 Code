@@ -1,0 +1,219 @@
+'''
+@author: VolvagiaPrime
+Description: Battle for New York in the subway systems beneath the city as
+ hideous creatures come out of the dark and try to kill you!
+ Stemming from years of hazardous, toxic waste in the sewers, fight for
+ you own survival along with humanity's as unrelenting waves of slime, thrall,
+ and other abominations try to stop you from saving the world. As you fight
+ through the underground, the streets, and eventually the sky, go up againt
+ stronger and tougher enemies, mutated foes, and all sorts of other terrifying
+ things from the deep.
+'''
+import pygame
+import sys, os, math
+from pygame import *
+from random import randint
+from spriteHelper import SpriteSheet
+
+WINDOWWIDTH = 1024
+WINDOWHEIGHT = 768
+GAMENAME = "Underground Battle NY"
+FRAMERATE = 60
+BGCOLOR = (255,255,255)
+#RED = (255,0,0)
+#GREEN = (0,255,0)
+#BLUE = (0,0,255)
+#BLACK = (0,0,0)
+#WHITE = (255,255,255)
+#These are for quick color access
+
+
+mainMenu = True
+startButton = False
+optionButton = False
+quitButton = False
+
+while mainMenu == True:
+    x = WINDOWWIDTH
+    y = WINDOWHEIGHT
+    menuBG = pygame.image.load('mainMenuBG.png')
+    
+    def __init__(self):
+        pygame.init()
+        self.clock = pygame.time.Clock()
+        self.surface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT))
+        pygame.display.set_caption(GAMENAME)
+    
+    
+    def menuBackGround(x,y):
+        surface.blit(menuBG,(x*0.45,y*0.8))
+        
+    def startButton(x,y):
+        pass
+    def optionButton(x,y):
+        pass
+    def quitButton(x,y):
+        pass
+    
+    
+    if startButton == True:
+        pass
+    if optionButton == True:
+        pass
+    if quitButton == True:
+        sys.exit()
+            
+'''
+class Player:
+    #Description: Class used to identify the player
+    ########## VARIABLES ##########
+    x = (WINDOWWIDTH / 2)
+    y = (WINDOWHEIGHT / 2)
+    collider = None
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        self.image = SpriteSheet("mainMenuBG.png")
+        self.image = self.image.get_image(0,0,1024,768)
+    ########## MAIN FUNCTION ##########
+    def draw(self,surface):
+        #Draws the player sprite on the screen
+        surface.blit(self.image,(self.x,self.y))
+    
+    def getCollider(self):
+        #Returns a rectangle area representing the player sprite
+        pass
+
+    def getCenter(self):
+        rect = self.image.get_rect()
+        return (rect.w/2,rect.h/2)
+        #Here X and Y cannot be used because it will cause the computer to use
+        #the coordinates (0,0) on the rectangle
+
+class Game:
+    ########## VARIABLES ##########
+    score = 0
+    levels = []
+    topScores = []
+    player = None
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pygame.init()
+        self.clock = pygame.time.Clock()
+        self.surface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT))
+        pygame.display.set_caption(GAMENAME)
+        self.player = Player()
+    ########## MAIN FUNCTION ##########
+    def main(self):
+        playing = True
+        
+    ########## GAME LOOP ##########
+        while playing:
+            delta = self.clock.tick(FRAMERATE)
+            #Forces the actions in a game to always move the same speed
+            #and reach the same outcome regardless of how fast one's computer
+            #is
+            for event in pygame.event.get():
+                if event.type==QUIT:
+                    self.quit()
+            self.processLogic(delta)
+            self.drawScreen()
+            pygame.display.flip()
+    def quit(self):
+        pygame.quit()
+        sys.exit()
+               
+    def processLogic(self,delta):
+        pass
+    
+    def drawScreen(self):
+        self.surface.fill(BGCOLOR)
+        #Constantly fills the screen with white every frame
+        centerOfScreen = self.getCenterOfScreen()
+        centerOfPlayer = self.player.getCenter()
+        self.player.x = centerOfScreen[0]-centerOfPlayer[0]
+        self.player.y = centerOfScreen[1]-centerOfPlayer[1]
+        self.player.draw(self.surface)
+                
+    def getCenterOfScreen(self):
+        return(WINDOWWIDTH/2,WINDOWHEIGHT/2)
+    
+if __name__=='__main__':
+    game = Game()
+    game.main()
+                
+class Levels:
+    ########## VARIABLES ##########
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    
+    ########## MAIN FUNCTION ##########
+        
+class Animation:
+    ########## VARIABLES ##########
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+    
+class Platforms:
+    ########## VARIABLES ##########
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+    
+class Interface:
+    ########## VARIABLES ##########
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+    
+class Buttons:
+    ########## VARIABLES ##########
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+    
+class NPC(Animation):
+    ########## VARIABLES ##########
+    dead = False
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+    
+class Collectables(Animation):
+    ########## VARIABLES ##########
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+    
+class Hazards(Animation):
+    ########## VARIABLES ##########
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+    
+class Destructables(Animation):
+    ########## VARIABLES ##########
+    
+    ########## CONSTRUCTOR ##########
+    def __init__(self):
+        pass
+    ########## MAIN FUNCTION ##########
+'''
