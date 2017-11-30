@@ -1,0 +1,36 @@
+def average(grades):
+    total = 0
+    for grade in grades:
+        total += grade
+    return total/len(grades)
+
+def getGrade():
+    grade = input("Input Grade (0-100) or q to quit:")
+    if grade.lower() == "q":
+        return -1
+    else:
+        try:
+            grade = int(grade)
+            return grade
+        except:
+            print("Invalid Input.")
+            return False
+        
+def quitNow():
+    print("The average score is %d" % average(grades))
+    input("Press any key to quit")
+    
+running = True
+grades = []
+
+while running:
+    grade = getGrade()
+    if grade ==-1:
+        quitNow()
+        running = False
+    else:
+        if grade:
+            if grade<0 or grade > 100:
+                print("Invalid Input.")
+            else:
+                grades.append(grade)
