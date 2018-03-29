@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Savant - Ascent
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/259530
+Icon=steam_icon_259530
+Terminal=false
+Type=Application
+Categories=Game;
